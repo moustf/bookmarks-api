@@ -10,5 +10,15 @@ services:
       POSTGRES_DB: nest
     networks:
       - freddcodecamp
+  test-db:
+    image: postgres:15.1
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: nest_test
+    networks:
+      - freddcodecamp
 networks:
   freddcodecamp:
